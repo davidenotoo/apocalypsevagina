@@ -1,0 +1,16 @@
+{
+    "name": "Apocalypse Vagina",
+    "short_name": "Apoc. Vagina",
+    "description": "Landing page for Apocalypse Vagina",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#111",
+    "theme_color": "#000",
+    "icons": [
+      {
+        "src": "photo2.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
