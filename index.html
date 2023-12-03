@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apocalypse Vagina - Landing Page</title>
+
+    <!-- favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- manifest -->
     <link rel="manifest" href="manifest.json">
+
+    <!-- icona IOS -->
+    <link rel="apple-touch-icon" href="photo2.png">
 
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing:border-box;
             background-color: #111;
             color: #fff;
             text-align: center;
@@ -22,26 +29,30 @@
         #video-container {
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         #video {
             width: 100%;
             height: auto;
             border-radius: 12px;
-            padding: 20px; /* Aggiunto padding */
+            padding-top: 20px;
+            /* Aggiunto padding */
         }
 
         #logo-section {
             background-color: #000;
             text-align: center;
-            padding: 20px;
+            padding: 0px;
         }
 
         #logo {
             max-width: 100px;
             max-height: 100px;
             border-radius: 12px;
-            padding: 10px; /* Aggiunto padding */
+            padding: 10px;
+            /* Aggiunto padding */
         }
 
         .description-section {
@@ -68,7 +79,8 @@
             width: 100%;
             height: auto;
             border-radius: 12px;
-            padding: 20px; /* Aggiunto padding */
+            padding: 20px;
+            /* Aggiunto padding */
         }
 
         #mini-player-section {
@@ -79,7 +91,8 @@
         #spotify-player {
             border-radius: 12px;
             width: 100%;
-            padding: 20px; /* Aggiunto padding */
+            padding: 20px;
+            /* Aggiunto padding */
         }
 
         #gallery-section {
@@ -94,7 +107,8 @@
             height: auto;
             margin-right: 20px;
             border-radius: 12px;
-            padding: 10px; /* Aggiunto padding */
+            padding: 10px;
+            /* Aggiunto padding */
         }
 
         #photo-section {
@@ -110,7 +124,8 @@
             height: auto;
             margin-bottom: 20px;
             border-radius: 12px;
-            padding: 10px; /* Aggiunto padding */
+            padding: 10px;
+            /* Aggiunto padding */
         }
 
         .contact-info {
@@ -132,7 +147,7 @@
             .description,
             .video-container,
             #photo {
-                max-width: 100%;
+                max-width: 90%;
                 margin-right: 0;
             }
         }
@@ -141,9 +156,6 @@
 
 <body>
 
-    <div id="text-section">
-        <h2>Apocalypse Vagina</h2>
-    </div>
 
     <div id="video-container">
         <video id="video" autoplay loop muted>
@@ -154,6 +166,10 @@
 
     <div id="logo-section">
         <img id="logo" src="photo2.png" alt="Logo">
+    </div>
+    <br>
+    <div id="text-section">
+        <h2>Apocalypse Vagina</h2>
     </div>
 
     <div class="description-section">
