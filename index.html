@@ -215,7 +215,7 @@
             </video>
         </div>
     </div>
-<br><br><br>
+    <br><br><br>
 
 
     <div class="description-section">
@@ -232,7 +232,7 @@
                 voluptates maxime!</p>
         </div>
     </div>
-<br><br><br>
+    <br><br><br>
     <div id="mini-player-section">
         <iframe id="spotify-player"
             src="https://open.spotify.com/embed/album/1Kvnyu1qqE80Dik6rB3m7X?utm_source=generator&theme=0" width="100%"
@@ -279,5 +279,12 @@
     </div>
 
 </body>
+<script>document.addEventListener("DOMContentLoaded", function () {
+        var gallerySection = document.getElementById('gallery-section');
+
+        // Imposta la posizione iniziale dello scorrimento al 20%
+        gallerySection.scrollLeft = gallerySection.scrollWidth * 0.01;
+    });
+</script>
 
 </html>
