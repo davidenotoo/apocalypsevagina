@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- descrizione sito per google -->
+    <meta name="description"
+        content="L'essenza del progetto prende forma attraverso il suono e si congiunge con l'espressione dei racconti visivi di Loredana Lavino e con le illustrazioni di Alessandra Oricchio, aka Gas. Insieme tutti questi elementi raccontano il progetto Apocalypse Vagina e ti trasportano in questo flusso che si completa nella live performance e in luoghi che diventano parte integrante del messaggio.">
     <title>Apocalypse Vagina - Landing Page</title>
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- manifest -->
     <link rel="manifest" href="manifest.json">
@@ -46,7 +50,6 @@
             height: auto;
             border-radius: 12px;
             padding-top: 20px;
-            /* Aggiunto padding */
         }
 
         #logo-section {
@@ -60,7 +63,6 @@
             max-height: 100px;
             border-radius: 12px;
             padding: 10px;
-            /* Aggiunto padding */
         }
 
         .description-section {
@@ -68,7 +70,6 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            /* padding: 20px; */
         }
 
         .description {
@@ -88,7 +89,6 @@
             height: auto;
             border-radius: 12px;
             padding: 20px;
-            /* Aggiunto padding */
         }
 
         #mini-player-section {
@@ -99,14 +99,32 @@
         #spotify-player {
             border-radius: 12px;
             width: 100%;
-            /* padding: 20px; */
-            /* Aggiunto padding */
         }
 
         #gallery-section {
-            overflow-x: scroll;
+            overflow-x: auto;
             white-space: nowrap;
             padding: 20px;
+            -webkit-overflow-scrolling: touch;
+
+        }
+
+        #gallery-section::-webkit-scrollbar {
+            width: 8px;
+            margin-left: 8px;
+        }
+
+        #gallery-section::-webkit-scrollbar-thumb {
+            background-color: #666;
+            /* Colore del pollice */
+            border-radius: 8px;
+            /* Angoli arrotondati del pollice */
+        }
+
+        /* Stile per il "tracciatore" della barra di scorrimento */
+        #gallery-section::-webkit-scrollbar-track {
+            background-color: #1f1f1f;
+            /* Colore del tracciatore */
         }
 
         .gallery-img {
@@ -114,8 +132,9 @@
             max-width: 100%;
             height: auto;
             margin-right: 20px;
+            margin-bottom: 20px;
             border-radius: 12px;
-        
+            user-select: none;
         }
 
         #photo-section {
@@ -131,8 +150,6 @@
             height: auto;
             margin-bottom: 20px;
             border-radius: 12px;
-            /* padding: 10px; */
-            /* Aggiunto padding */
         }
 
         .contact-info {
@@ -151,11 +168,16 @@
                 flex-direction: column;
             }
 
+            /* inversione della colonna in modalità phone */
+            #invert-descrtiption {
+                flex-direction: column-reverse;
+            }
+
             .description,
             .video-container,
             #photo {
                 max-width: 90%;
-                margin-right: 0;
+                margin: 0;
             }
         }
     </style>
@@ -163,6 +185,12 @@
 
 <body>
 
+    <div id="logo-section">
+        <img id="logo" src="logo.png" alt="Logo">
+    </div>
+    <div id="text-section">
+        <h2 id="title">Apocalypse Vagina</h2>
+    </div>
 
     <div id="video-container">
         <video id="video" autoplay loop muted>
@@ -171,22 +199,15 @@
         </video>
     </div>
 
-    <div id="logo-section">
-        <img id="logo" src="logo.png" alt="Logo">
-    </div>
-    <br>
-    <div id="text-section">
-        <h2 id="title">Apocalypse Vagina</h2>
-    </div>
-
-    <div class="description-section">
+    <br><br><br><br>
+    <div class="description-section" id="invert-descrtiption">
         <div class="description">
             <h2>Melevisione</h2>
             <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor consectetur voluptate ea explicabo
                 obcaecati non molestias quia rerum sint. Reprehenderit molestiae nulla molestias illo porro corrupti
                 fuga dolor eaque maxime.</p>
         </div>
-        <div class="video-container">
+        <div class="video-container" id="invert-descrtiption">
             <video class="video" autoplay loop muted>
                 <source src="video1cut.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -194,7 +215,7 @@
         </div>
     </div>
 
-    
+
 
     <div class="description-section">
         <div class="video-container">
@@ -228,17 +249,24 @@
     <div id="photo-section">
         <img id="photo" src="photo3.png" alt="Photo">
         <div class="description">
-            <h2>3 personaggi in cerca d'autore</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, amet ipsum doloribus similique repellendus,
-                quos voluptatibus obcaecati quisquam error ipsa culpa. Minima beatae veniam cumque error ab libero
-                consequuntur? Tempore?</p>
+            <h2>ABOUT US</h2>
+            <p>Apocalypse Vagina parla di fine e di inizio attraverso il suono. <br> <br>
+                E' un progetto di musica elettronica che prende forma alla fine dell'estate 2022.
+                <br>
+                Tre, le persone coinvolte, Vincenzo Giangrasso, Francesco Palmeri, Davide Faraci.
+                <br><br>
+                "In questi mesi abbiamo messo insieme creatività, voglia di metterci in discussione e sentiamo di avere
+                qualcosa da dire. Così è nato il primo album che abbiamo messo a fuoco con sette brani inediti e che
+                vogliamo portare a più orecchie possibili attraverso una performance live, con drums, sintetizzatori,
+                controller ed effetti."
+            </p>
         </div>
     </div>
 
     <div id="contact-section">
         <h2>Contatti e Info Booking</h2>
         <div class="contact-info">
-            <p>Email: apocalypsevagina@gmail.com</p>
+            <p>Email: <a href="apocalypsevagina@gmail.com"></a>Email</p>
         </div>
         <div class="contact-info">
             <p>Instagram:
@@ -246,8 +274,8 @@
                     target="_blank">apocalypsevagina</a>
             </p>
         </div>
-    </div>
 
+    </div>
 
 </body>
 
