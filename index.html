@@ -6,11 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- preload del font -->
+    <link rel="preload" href="https://db.onlinewebfonts.com/t/db8811fcaea2386d4f6e3bcf7e6d206b.woff" as="font" crossorigin="anonymous">
+
     <!-- Libreria per la barra di scorrimento su Safari -->
     <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.min.css">
 
     <!-- Descrizione del sito per Google -->
-    <meta name="description" content="L'essenza del progetto prende forma attraverso il suono e si congiunge con l'espressione dei racconti visivi di Loredana Lavino e con le illustrazioni di Alessandra Oricchio, aka Gas. Insieme tutti questi elementi raccontano il progetto Apocalypse Vagina e ti trasportano in questo flusso che si completa nella live performance e in luoghi che diventano parte integrante del messaggio.">
+    <meta name="description"
+        content="L'essenza del progetto prende forma attraverso il suono e si congiunge con l'espressione dei racconti visivi di Loredana Lavino e con le illustrazioni di Alessandra Oricchio, aka Gas. Insieme tutti questi elementi raccontano il progetto Apocalypse Vagina e ti trasportano in questo flusso che si completa nella live performance e in luoghi che diventano parte integrante del messaggio.">
     <title>Apocalypse Vagina - Landing Page</title>
 
     <!-- Icona del sito -->
@@ -196,6 +200,7 @@
 
         /* Stili per la responsività su dispositivi mobile */
         @media (max-width: 768px) {
+
             .description-section,
             #photo-section {
                 flex-direction: column;
@@ -226,6 +231,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            transition: opacity 0.5s ease-out;
         }
 
         #loading-spinner {
@@ -246,17 +252,12 @@
                 transform: rotate(360deg);
             }
         }
-
-        #loading-screen.hide {
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
-        }
     </style>
 </head>
 
 <body>
     <!-- Schermata di caricamento -->
-    <div id="loading-screen" class="hide">
+    <div id="loading-screen">
         <div id="loading-spinner"></div>
     </div>
 
@@ -275,6 +276,8 @@
             Your browser does not support the video tag.
         </video>
     </div>
+
+    <br><br><br>
 
     <!-- Sezione di descrizione e video -->
     <div class="description-section" id="invert-descrtiption">
@@ -332,7 +335,6 @@
         <img class="gallery-img" src="photo/1.JPG" alt="Image 1">
         <img class="gallery-img" src="photo/2.JPG" alt="Image 2">
         <img class="gallery-img" src="photo/3.JPG" alt="Image 3">
-        <!-- <img class="gallery-img" src="photo1.png" alt="Image 4"> -->
     </div>
 
     <div id="photo-section">
@@ -369,29 +371,35 @@
 </body>
 <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
 <script>
-    // Script per gestire la schermata di caricamento
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", async function () {
         var loadingScreen = document.getElementById('loading-screen');
         var videos = document.querySelectorAll('video');
 
-        var loadedVideos = 0;
-        var totalVideos = videos.length;
+        async function waitForVideoLoad(video) {
+            return new Promise((resolve, reject) => {
+                video.addEventListener('loadeddata', () => {
+                    resolve();
+                });
 
-        function checkVideoLoad() {
-            loadedVideos++;
-            if (loadedVideos === totalVideos) {
-                hideLoadingScreen();
-            }
+                video.addEventListener('error', () => {
+                    reject();
+                });
+            });
         }
 
-        function hideLoadingScreen() {
-            loadingScreen.classList.add('hide');
+        async function hideLoadingScreen() {
+            loadingScreen.style.opacity = 0;
+            await new Promise(resolve => setTimeout(resolve, 500));
+            loadingScreen.style.display = 'none';
         }
 
-        videos.forEach(function (video) {
-            video.addEventListener('loadeddata', checkVideoLoad);
-            video.addEventListener('error', checkVideoLoad);
-        });
+        try {
+            await Promise.all(Array.from(videos).map(waitForVideoLoad));
+            hideLoadingScreen();
+        } catch (error) {
+            console.error('Errore durante il caricamento dei video', error);
+            hideLoadingScreen();
+        }
     });
 </script>
 
