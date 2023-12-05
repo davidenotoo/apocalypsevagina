@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- preload del font -->
-    <link rel="preload" href="https://db.onlinewebfonts.com/t/db8811fcaea2386d4f6e3bcf7e6d206b.woff" as="font" crossorigin="anonymous">
+    <link rel="preload" href="https://db.onlinewebfonts.com/t/db8811fcaea2386d4f6e3bcf7e6d206b.woff" as="font"
+        crossorigin="anonymous">
 
     <!-- Libreria per la barra di scorrimento su Safari -->
     <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.min.css">
@@ -52,6 +53,11 @@
         #title {
             font-family: "Miedinger W01 Bold";
             font-size: 25px;
+        }
+
+        /* stile titoli dei paragrafi */
+        h2 {
+            font-family: "Miedinger W01 Bold";
         }
 
         /* Stile degli elementi video */
@@ -279,7 +285,7 @@
 
     <br><br><br>
 
-    <!-- Sezione di descrizione e video -->
+    <!-- Prima sezione di descrizione e video -->
     <div class="description-section" id="invert-descrtiption">
         <div class="description">
             <h2>BREATHE</h2>
@@ -299,6 +305,7 @@
     <br><br><br>
 
 
+    <!-- Seconda sezione di descrizione e video -->
     <div class="description-section">
         <div class="video-container">
             <video class="video" autoplay loop muted>
@@ -323,23 +330,28 @@
     </div>
 
 
-
+    <!-- player di SPOTIFY -->
     <div id="mini-player-section">
         <iframe id="spotify-player"
             src="https://open.spotify.com/embed/album/1Kvnyu1qqE80Dik6rB3m7X?utm_source=generator&theme=0" width="100%"
-            height="152" frameborder="0" allowfullscreen=""
+            height="152" frameborder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
+
+    <!-- galleria di immagini -->
     <div id="gallery-section" class="simplebar">
-        <img class="gallery-img" src="photo/1.JPG" alt="Image 1">
         <img class="gallery-img" src="photo/2.JPG" alt="Image 2">
+        <img class="gallery-img" src="photo/1.JPG" alt="Image 1">
         <img class="gallery-img" src="photo/3.JPG" alt="Image 3">
     </div>
 
+
+    <!-- foto About Us -->
     <div id="photo-section">
         <img id="photo" src="photo3.png" alt="Photo">
         <div class="description">
+            <!-- descrizione about us -->
             <h2>ABOUT US</h2>
             <p>Apocalypse Vagina parla di fine e di inizio attraverso il suono. <br> <br>
                 E' un progetto di musica elettronica che prende forma alla fine dell'estate 2022.
@@ -356,8 +368,10 @@
 
     <div id="contact-section">
 
+        <!-- titolo contatti -->
         <h2>Contatti e Info Booking</h2>
 
+        <!-- icone con link IG e Mail -->
         <div class="contact-info">
             <p><a href="mailto:apocalypsevagina@gmail.com"><img src="iconMail.png" alt="Mail"></a></p>
             <p>
@@ -371,6 +385,9 @@
 </body>
 <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
 <script>
+
+    // logica di funzionamento della schermata di caricamento
+    // attende il completo caricamento dei video prima di mostrare la pagina effettiva
     document.addEventListener("DOMContentLoaded", async function () {
         var loadingScreen = document.getElementById('loading-screen');
         var videos = document.querySelectorAll('video');
