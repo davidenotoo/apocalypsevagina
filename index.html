@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- barra per safari -->
+
+    <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.min.css">
+
     <!-- descrizione sito per google -->
     <meta name="description"
         content="L'essenza del progetto prende forma attraverso il suono e si congiunge con l'espressione dei racconti visivi di Loredana Lavino e con le illustrazioni di Alessandra Oricchio, aka Gas. Insieme tutti questi elementi raccontano il progetto Apocalypse Vagina e ti trasportano in questo flusso che si completa nella live performance e in luoghi che diventano parte integrante del messaggio.">
@@ -121,6 +125,11 @@
             padding: 20px;
             -webkit-overflow-scrolling: touch;
             cursor: pointer;
+        }
+
+        #gallery-section .simplebar-scrollbar::before {
+            background-color: rgb(157, 255, 0);
+            border-radius: 8px;
         }
 
         #gallery-section::-webkit-scrollbar {
@@ -258,12 +267,12 @@
 
     <!-- modificare br -->
     <br><br><br><br><br>
+    <div>
         <div>
-            <div>
-                <h2>PHONK</h2>
-            </div>
+            <h2>PHONK</h2>
         </div>
-    
+    </div>
+
 
 
     <div id="mini-player-section">
@@ -273,7 +282,7 @@
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
-    <div id="gallery-section">
+    <div id="gallery-section" class="simplebar">
         <img class="gallery-img" src="photo/1.JPG" alt="Image 1">
         <img class="gallery-img" src="photo/2.JPG" alt="Image 2">
         <img class="gallery-img" src="photo/3.JPG" alt="Image 3">
@@ -313,8 +322,7 @@
     </div>
 
 </body>
-<script>
-</script>
+<script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
 
 </html>
 
