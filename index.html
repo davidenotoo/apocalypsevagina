@@ -46,6 +46,11 @@
             font-size: 25px;
         }
 
+        h2 {
+            font-family: "Miedinger W01 Bold";
+
+        }
+
         #video-container {
             position: relative;
             overflow: hidden;
@@ -93,7 +98,7 @@
         }
 
         .video {
-            width: 100%;
+            width: 60%;
             height: auto;
             border-radius: 12px;
             padding: 20px;
@@ -105,6 +110,7 @@
         }
 
         #spotify-player {
+            margin-bottom: 100px;
             border-radius: 12px;
             width: 100%;
         }
@@ -114,35 +120,36 @@
             white-space: nowrap;
             padding: 20px;
             -webkit-overflow-scrolling: touch;
-
+            cursor: pointer;
         }
 
         #gallery-section::-webkit-scrollbar {
-            width: 8px;
+            width: 12px;
             margin-left: 8px;
         }
 
+        /* barra interna */
         #gallery-section::-webkit-scrollbar-thumb {
             background-color: rgb(157, 255, 0);
-            /* Colore del pollice */
             border-radius: 8px;
-            /* Angoli arrotondati del pollice */
+            height: 60px;
         }
+
 
         /* Stile per il "tracciatore" della barra di scorrimento */
         #gallery-section::-webkit-scrollbar-track {
             background-color: #1f1f1f;
             border-radius: 8px;
-            margin-left: 10px;
-            margin-right: 10px;
-            /* Colore del tracciatore */
+            margin-left: 40px;
+            margin-right: 40px;
         }
+
 
         .gallery-img {
             display: inline-block;
             max-width: 100%;
             height: auto;
-            margin-right: 20px;
+            /* margin-right: 10px; */
             margin-bottom: 20px;
             border-radius: 12px;
             user-select: none;
@@ -158,14 +165,19 @@
         }
 
         #photo {
-            max-width: calc(50% - 20px);
+            max-width: calc(40% - 20px);
             height: auto;
             margin-bottom: 20px;
             border-radius: 12px;
         }
 
         .contact-info {
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 20px;
         }
 
         #contact-section {
@@ -201,7 +213,7 @@
         <img id="logo" src="logo.png" alt="Logo">
     </div>
     <div id="text-section">
-        <h2 id="title">Apocalypse Vagina</h2>
+        <h1 id="title">Apocalypse Vagina</h1>
     </div>
 
     <div id="video-container">
@@ -214,7 +226,7 @@
     <br><br><br><br>
     <div class="description-section" id="invert-descrtiption">
         <div class="description">
-            <h2>Melevisione</h2>
+            <h2>BREATHE</h2>
             <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor consectetur voluptate ea explicabo
                 obcaecati non molestias quia rerum sint. Reprehenderit molestiae nulla molestias illo porro corrupti
                 fuga dolor eaque maxime.</p>
@@ -237,13 +249,23 @@
             </video>
         </div>
         <div class="description">
-            <h2> Fluo Party</h2>
+            <h2> PARTY</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptas fugiat, officiis modi vero ipsa
                 illo dolorum earum hic at, reiciendis asperiores pariatur laboriosam itaque beatae sit deleniti
                 voluptates maxime!</p>
         </div>
     </div>
-    <br><br><br>
+
+    <!-- modificare br -->
+    <br><br><br><br><br>
+        <div>
+            <div>
+                <h2>PHONK</h2>
+            </div>
+        </div>
+    
+
+
     <div id="mini-player-section">
         <iframe id="spotify-player"
             src="https://open.spotify.com/embed/album/1Kvnyu1qqE80Dik6rB3m7X?utm_source=generator&theme=0" width="100%"
@@ -252,10 +274,10 @@
     </div>
 
     <div id="gallery-section">
-        <img class="gallery-img" src="photo1.png" alt="Image 1">
-        <img class="gallery-img" src="photo2.png" alt="Image 2">
-        <img class="gallery-img" src="photo3.png" alt="Image 3">
-        <img class="gallery-img" src="photo1.png" alt="Image 4">
+        <img class="gallery-img" src="photo/1.JPG" alt="Image 1">
+        <img class="gallery-img" src="photo/2.JPG" alt="Image 2">
+        <img class="gallery-img" src="photo/3.JPG" alt="Image 3">
+        <!-- <img class="gallery-img" src="photo1.png" alt="Image 4"> -->
     </div>
 
     <div id="photo-section">
@@ -276,26 +298,22 @@
     </div>
 
     <div id="contact-section">
+
         <h2>Contatti e Info Booking</h2>
+
         <div class="contact-info">
-            <p>Email: <a href="apocalypsevagina@gmail.com"></a>Email</p>
-        </div>
-        <div class="contact-info">
-            <p>Instagram:
+            <p><a href="mailto:apocalypsevagina@gmail.com"><img src="iconMail.png" alt="Mail"></a></p>
+            <p>
                 <a href="https://www.instagram.com/apocalypsevagina/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="
-                    target="_blank">apocalypsevagina</a>
+                    target="_blank">
+                    <img src="iconIG.png" alt="Instagram" width="30" height="30">
+                </a>
             </p>
         </div>
-
     </div>
 
 </body>
-<script>document.addEventListener("DOMContentLoaded", function () {
-        var gallerySection = document.getElementById('gallery-section');
-
-        // Imposta la posizione iniziale dello scorrimento al 4%
-        gallerySection.scrollLeft = gallerySection.scrollWidth * 0.04;
-    });
+<script>
 </script>
 
 </html>
