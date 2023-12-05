@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
+    <!-- Metadati della pagina -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- barra per safari -->
-
+    <!-- Libreria per la barra di scorrimento su Safari -->
     <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.min.css">
 
-    <!-- descrizione sito per google -->
-    <meta name="description"
-        content="L'essenza del progetto prende forma attraverso il suono e si congiunge con l'espressione dei racconti visivi di Loredana Lavino e con le illustrazioni di Alessandra Oricchio, aka Gas. Insieme tutti questi elementi raccontano il progetto Apocalypse Vagina e ti trasportano in questo flusso che si completa nella live performance e in luoghi che diventano parte integrante del messaggio.">
+    <!-- Descrizione del sito per Google -->
+    <meta name="description" content="L'essenza del progetto prende forma attraverso il suono e si congiunge con l'espressione dei racconti visivi di Loredana Lavino e con le illustrazioni di Alessandra Oricchio, aka Gas. Insieme tutti questi elementi raccontano il progetto Apocalypse Vagina e ti trasportano in questo flusso che si completa nella live performance e in luoghi che diventano parte integrante del messaggio.">
     <title>Apocalypse Vagina - Landing Page</title>
 
-    <!-- favicon -->
+    <!-- Icona del sito -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- manifest -->
+    <!-- Manifest per PWA -->
     <link rel="manifest" href="manifest.json">
 
-    <!-- icona IOS -->
+    <!-- Icona per dispositivi iOS -->
     <link rel="apple-touch-icon" href="photo2.png">
 
-    <!-- Icona desktop -->
+    <!-- Icona per desktop -->
     <link rel="icon" type="image/png" sizes="512x512" href="iconDesktop.png">
 
+    <!-- Stili CSS -->
     <style>
-        /* font titolo */
+        /* Font titolo */
         @import url(https://db.onlinewebfonts.com/c/db8811fcaea2386d4f6e3bcf7e6d206b?family=Miedinger+W01+Bold);
 
-        /* font "albanese" */
+        /* Font "albanese" */
         @import url('https://fonts.cdnfonts.com/css/horizon');
 
+        /* Stili generici */
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 0;
@@ -43,18 +44,13 @@
             text-align: center;
         }
 
+        /* Stile del titolo principale */
         #title {
-            /* font-family: 'Horizon', sans-serif;
-            font-size: 40px; */
             font-family: "Miedinger W01 Bold";
             font-size: 25px;
         }
 
-        h2 {
-            font-family: "Miedinger W01 Bold";
-
-        }
-
+        /* Stile degli elementi video */
         #video-container {
             position: relative;
             overflow: hidden;
@@ -69,6 +65,7 @@
             padding-top: 20px;
         }
 
+        /* Stile della sezione del logo */
         #logo-section {
             background-color: #000;
             text-align: center;
@@ -82,6 +79,7 @@
             padding: 10px;
         }
 
+        /* Stile delle sezioni di descrizione */
         .description-section {
             display: flex;
             flex-wrap: wrap;
@@ -108,6 +106,7 @@
             padding: 20px;
         }
 
+        /* Stile della sezione del mini player Spotify */
         #mini-player-section {
             text-align: center;
             padding: 20px;
@@ -119,6 +118,7 @@
             width: 100%;
         }
 
+        /* Stile della sezione della galleria immagini */
         #gallery-section {
             overflow-x: auto;
             white-space: nowrap;
@@ -137,13 +137,12 @@
             margin-left: 8px;
         }
 
-        /* barra interna */
+        /* Stile della barra interna della galleria */
         #gallery-section::-webkit-scrollbar-thumb {
             background-color: rgb(157, 255, 0);
             border-radius: 8px;
             height: 60px;
         }
-
 
         /* Stile per il "tracciatore" della barra di scorrimento */
         #gallery-section::-webkit-scrollbar-track {
@@ -153,17 +152,17 @@
             margin-right: 40px;
         }
 
-
+        /* Stile delle immagini della galleria */
         .gallery-img {
             display: inline-block;
             max-width: 100%;
             height: auto;
-            /* margin-right: 10px; */
             margin-bottom: 20px;
             border-radius: 12px;
             user-select: none;
         }
 
+        /* Stile della sezione delle foto */
         #photo-section {
             display: flex;
             flex-wrap: wrap;
@@ -180,28 +179,29 @@
             border-radius: 12px;
         }
 
+        /* Stile delle informazioni di contatto */
         .contact-info {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-
             margin: 20px;
         }
 
+        /* Stile della sezione di contatto e informazioni di booking */
         #contact-section {
             text-align: center;
             padding: 20px;
         }
 
+        /* Stili per la responsività su dispositivi mobile */
         @media (max-width: 768px) {
-
             .description-section,
             #photo-section {
                 flex-direction: column;
             }
 
-            /* inversione della colonna in modalità phone */
+            /* Inversione della colonna in modalità phone */
             #invert-descrtiption {
                 flex-direction: column-reverse;
             }
@@ -213,11 +213,54 @@
                 margin: 0;
             }
         }
+
+        /* Stili per la schermata di caricamento */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loading-spinner {
+            border: 6px solid #4CAF50;
+            border-top: 6px solid #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #loading-screen.hide {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Schermata di caricamento -->
+    <div id="loading-screen" class="hide">
+        <div id="loading-spinner"></div>
+    </div>
 
+    <!-- Inizio del sito -->
     <div id="logo-section">
         <img id="logo" src="logo.png" alt="Logo">
     </div>
@@ -225,6 +268,7 @@
         <h1 id="title">Apocalypse Vagina</h1>
     </div>
 
+    <!-- Contenuto video -->
     <div id="video-container">
         <video id="video" autoplay loop muted>
             <source src="videoRuotato.mp4" type="video/mp4">
@@ -232,7 +276,7 @@
         </video>
     </div>
 
-    <br><br><br><br>
+    <!-- Sezione di descrizione e video -->
     <div class="description-section" id="invert-descrtiption">
         <div class="description">
             <h2>BREATHE</h2>
@@ -247,6 +291,8 @@
             </video>
         </div>
     </div>
+
+
     <br><br><br>
 
 
@@ -320,9 +366,33 @@
             </p>
         </div>
     </div>
-
 </body>
 <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
+<script>
+    // Script per gestire la schermata di caricamento
+    document.addEventListener("DOMContentLoaded", function () {
+        var loadingScreen = document.getElementById('loading-screen');
+        var videos = document.querySelectorAll('video');
+
+        var loadedVideos = 0;
+        var totalVideos = videos.length;
+
+        function checkVideoLoad() {
+            loadedVideos++;
+            if (loadedVideos === totalVideos) {
+                hideLoadingScreen();
+            }
+        }
+
+        function hideLoadingScreen() {
+            loadingScreen.classList.add('hide');
+        }
+
+        videos.forEach(function (video) {
+            video.addEventListener('loadeddata', checkVideoLoad);
+            video.addEventListener('error', checkVideoLoad);
+        });
+    });
+</script>
 
 </html>
-
