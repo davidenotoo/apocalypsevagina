@@ -241,27 +241,33 @@
             #invert-descrtiption {
                 flex-direction: column-reverse;
             }
-            body{
+
+            body {
                 margin: 0;
                 padding: 0;
             }
 
             .description,
             .video-container,
+            .image,
             #photo {
-                max-width: 90%;
-                margin: 0;
+                width: 80%;
+                max-width: none;
+                margin: 0 auto;
             }
-            #title{
+
+            #title {
                 font-size: 30px;
             }
 
-            p{
+            p {
                 font-size: 18px;
             }
-            .text-container{
-                font-size: 10px;
+
+            .text-container {
+                font-size: 40px !important;
             }
+            
         }
 
         /*  stile per le parole a comparsa */
@@ -359,6 +365,8 @@
 
     <br><br><br>
 
+
+
     <!-- parole che cambiano ogni 2 secondi -->
     <div class="text-container">
         <span id="text"></span>
@@ -371,11 +379,11 @@
 
 
 
-    <!-- Prima sezione di descrizione e foto -->
+    <!-- PRIMA sezione di descrizione e foto -->
     <div class="description-section" id="invert-descrtiption">
+
         <div class="description">
             <!-- <h2>BREATHE</h2> -->
-
             <p>Apocalypse Vagina is electronic music <br><br>
                 Apocalypse Vagina is not only about music <br><br>
                 It's about the emotions of our fragile generation, marked by uncertainty, yet unbroken and capable of
@@ -400,12 +408,10 @@
 
     </div>
 
-
-
     <br><br><br>
 
 
-    <!-- Seconda sezione di descrizione e video -->
+    <!-- SECONDA sezione di descrizione e video -->
     <div class="description-section">
 
 
@@ -416,7 +422,7 @@
             </video>
         </div> -->
 
-        <div class="video-container" id="invert-descrtiption">
+        <div class="video-container">
             <img class="image" src="secondaFoto.JPG" alt="Image 1">
         </div>
 
@@ -424,13 +430,17 @@
         <div class="description">
             <!-- <h2> PARTY</h2> -->
             <p>Our music is a fusion of analog synth and computer music, inspired by Jungle, Techno, Future Bass, Dark
-                Synth, and Ambient. <br><br>Our live performance, composed by analog synthesizers, drum set and controllers,
+                Synth, and Ambient. <br><br>Our live performance, composed by analog synthesizers, drum set and
+                controllers,
                 transports listeners to a dystopian dimension though deep harmonics, contrasted by the rhythmic
                 foundations that exude energy and confidence
             </p>
         </div>
     </div>
 
+
+
+    
     <!-- modificare br -->
     <br><br><br><br><br>
     <div>
@@ -438,8 +448,6 @@
             <h2>PHONK</h2>
         </div>
     </div>
-
-
     <!-- player di SPOTIFY -->
     <div id="mini-player-section">
         <iframe id="spotify-player"
@@ -524,8 +532,10 @@
     });
 
 
+
+    // logica per switch parole ogni 2 secondi
     document.addEventListener("DOMContentLoaded", function () {
-        const words = ["LOVE", "DESPAIR", "CRY", "RUN", "DESTROY", "JUST","BREATH"];
+        const words = ["LOVE", "DESPAIR", "CRY", "RUN", "DESTROY", "JUST", "BREATH"];
         const textElement = document.getElementById("text");
         let index = 0;
 
