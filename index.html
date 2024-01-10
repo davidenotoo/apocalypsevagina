@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
     <!-- Metadati della pagina -->
@@ -8,7 +8,7 @@
 
     <!-- google search console -->
     <meta name="google-site-verification" content="eFuSghQ9hkYvlgGzT1d-cM9MNCL5Zg7VXBkFPyy0_U4" />
-    
+
     <!-- preload del font -->
     <link rel="preload" href="https://db.onlinewebfonts.com/t/db8811fcaea2386d4f6e3bcf7e6d206b.woff" as="font"
         crossorigin="anonymous">
@@ -58,8 +58,8 @@
         /* Stili generici */
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 10px;
+            padding: 20px;
             box-sizing: border-box;
             background-color: #000000;
             color: #bfbfbf;
@@ -69,12 +69,16 @@
         /* Stile del titolo principale */
         #title {
             font-family: "Miedinger W01 Bold";
-            font-size: 25px;
+            font-size: 50px;
         }
 
         /* stile titoli dei paragrafi */
         h2 {
             font-family: "Miedinger W01 Bold";
+        }
+
+        p {
+            font-size: 40px;
         }
 
         /* Stile degli elementi video */
@@ -83,10 +87,12 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         #video {
-            width: 100%;
+            width: 70%;
             height: auto;
             border-radius: 12px;
             padding-top: 20px;
@@ -117,6 +123,7 @@
         .description {
             max-width: calc(50% - 20px);
             margin-bottom: 20px;
+            padding: 20px;
         }
 
         .video-container {
@@ -243,8 +250,41 @@
             }
         }
 
+        /*  stile per le parole a comparsa */
+
+        .text-container {
+            font-size: 50px;
+            font-family: "Miedinger W01 Bold";
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        /* Optional: Style for the animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #text {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* immagine della descrizione  */
+        .image {
+            width: 70%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+
         /* Stili per la schermata di caricamento */
-        #loading-screen {
+        /* #loading-screen {
             position: fixed;
             top: 0;
             left: 0;
@@ -256,16 +296,18 @@
             align-items: center;
             z-index: 9999;
             transition: opacity 0.5s ease-out;
-        }
+        } */
 
-        #loading-spinner {
+        /* cerchio di caricamento */
+
+        /* #loading-spinner {
             border: 6px solid #4CAF50;
             border-top: 6px solid #fff;
             border-radius: 50%;
             width: 50px;
             height: 50px;
             animation: spin 1s linear infinite;
-        }
+        } */
 
         @keyframes spin {
             0% {
@@ -303,21 +345,47 @@
 
     <br><br><br>
 
-    <!-- Prima sezione di descrizione e video -->
+    <!-- parole che cambiano ogni 2 secondi -->
+    <div class="text-container">
+        <span id="text"></span>
+    </div>
+
+    <br><br><br>
+
+
+
+
+
+
+    <!-- Prima sezione di descrizione e foto -->
     <div class="description-section" id="invert-descrtiption">
         <div class="description">
-            <h2>BREATHE</h2>
-            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor consectetur voluptate ea explicabo
-                obcaecati non molestias quia rerum sint. Reprehenderit molestiae nulla molestias illo porro corrupti
-                fuga dolor eaque maxime.</p>
+            <!-- <h2>BREATHE</h2> -->
+
+            <p>Apocalypse Vagina is electronic music <br><br>
+                Apocalypse Vagina is not only about music <br><br>
+                It's about the emotions of our fragile generation, marked by uncertainty, yet unbroken and capable of
+                rebirth <br><br>
+                We are in connection with all the souls out there who have experienced a personal apocalypse <br><br>
+                We want to inject new energy to emerge from this, as life is a place where one can always be born again
+
+            </p>
         </div>
-        <div class="video-container" id="invert-descrtiption">
+
+        <!-- <div class="video-container" id="invert-descrtiption">
             <video class="video" loop playsinline autoplay muted>
                 <source src="video1cut.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+        </div> -->
+
+        <div class="video-container" id="invert-descrtiption">
+            <img class="image" src="primaFoto.JPG" alt="Image 1">
         </div>
+
+
     </div>
+
 
 
     <br><br><br>
@@ -325,17 +393,27 @@
 
     <!-- Seconda sezione di descrizione e video -->
     <div class="description-section">
-        <div class="video-container">
+
+
+        <!-- <div class="video-container">
             <video class="video" loop playsinline autoplay muted>
                 <source src="video3cut.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+        </div> -->
+
+        <div class="video-container" id="invert-descrtiption">
+            <img class="image" src="secondaFoto.JPG" alt="Image 1">
         </div>
+
+
         <div class="description">
-            <h2> PARTY</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptas fugiat, officiis modi vero ipsa
-                illo dolorum earum hic at, reiciendis asperiores pariatur laboriosam itaque beatae sit deleniti
-                voluptates maxime!</p>
+            <!-- <h2> PARTY</h2> -->
+            <p>Our music is a fusion of analog synth and computer music, inspired by Jungle, Techno, Future Bass, Dark
+                Synth, and Ambient. <br><br>Our live performance, composed by analog synthesizers, drum set and controllers,
+                transports listeners to a dystopian dimension though deep harmonics, contrasted by the rhythmic
+                foundations that exude energy and confidence
+            </p>
         </div>
     </div>
 
@@ -367,19 +445,12 @@
 
     <!-- foto About Us -->
     <div id="photo-section">
-        <img id="photo" src="photo3.png" alt="Photo">
+        <img id="photo" src="treInsieme.JPG" alt="Photo">
         <div class="description">
             <!-- descrizione about us -->
             <h2>ABOUT US</h2>
-            <p>Apocalypse Vagina parla di fine e di inizio attraverso il suono. <br> <br>
-                E' un progetto di musica elettronica che prende forma alla fine dell'estate 2022.
-                <br>
-                Tre, le persone coinvolte, Vincenzo Giangrasso, Francesco Palmeri, Davide Faraci.
-                <br><br>
-                "In questi mesi abbiamo messo insieme creatività, voglia di metterci in discussione e sentiamo di avere
-                qualcosa da dire. Così è nato il primo album che abbiamo messo a fuoco con sette brani inediti e che
-                vogliamo portare a più orecchie possibili attraverso una performance live, con drums, sintetizzatori,
-                controller ed effetti."
+            <p>Three is the perfect number to achieve great things, and it's the premise of this electronic music
+                project, forged by three creative minds: Unrazze, The Brand of Killer, Desetiquete
             </p>
         </div>
     </div>
@@ -406,6 +477,7 @@
 
     // logica di funzionamento della schermata di caricamento
     // attende il completo caricamento dei video prima di mostrare la pagina effettiva
+
     document.addEventListener("DOMContentLoaded", async function () {
         var loadingScreen = document.getElementById('loading-screen');
         var videos = document.querySelectorAll('video');
@@ -435,6 +507,22 @@
             console.error('Errore durante il caricamento dei video', error);
             hideLoadingScreen();
         }
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const words = ["LOVE", "DESPAIR", "CRY", "RUN", "DESTROY", "JUST BREATH"];
+        const textElement = document.getElementById("text");
+        let index = 0;
+
+        function displayNextWord() {
+            textElement.textContent = words[index];
+            index = (index + 1) % words.length;
+        }
+
+        displayNextWord();
+
+        setInterval(displayNextWord, 2000);
     });
 </script>
 
