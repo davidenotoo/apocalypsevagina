@@ -241,12 +241,26 @@
             #invert-descrtiption {
                 flex-direction: column-reverse;
             }
+            body{
+                margin: 0;
+                padding: 0;
+            }
 
             .description,
             .video-container,
             #photo {
                 max-width: 90%;
                 margin: 0;
+            }
+            #title{
+                font-size: 30px;
+            }
+
+            p{
+                font-size: 18px;
+            }
+            .text-container{
+                font-size: 10px;
             }
         }
 
@@ -511,7 +525,7 @@
 
 
     document.addEventListener("DOMContentLoaded", function () {
-        const words = ["LOVE", "DESPAIR", "CRY", "RUN", "DESTROY", "JUST BREATH"];
+        const words = ["LOVE", "DESPAIR", "CRY", "RUN", "DESTROY", "JUST","BREATH"];
         const textElement = document.getElementById("text");
         let index = 0;
 
